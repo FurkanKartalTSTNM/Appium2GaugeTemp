@@ -1,0 +1,6 @@
+
+
+# IOS Basic (Xpath)
+* XPath ile elementi bul ve tıkla "//XCUIElementTypeButton[contains(@name, \"Markalar\")]"
+* XPath ile elementi bul ve tıkla "//XCUIElementTypeButton[contains(@name, \"Kampanyalar\")]"
+* "1" saniye bekle
