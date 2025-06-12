@@ -50,8 +50,6 @@ public class HookImp {
 
                         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
                         appiumFluentWait = new FluentWait<AppiumDriver>(driver);
-
-
                         appiumFluentWait.withTimeout(Duration.ofSeconds(8))
                                 .pollingEvery(Duration.ofMillis(350))
                                 .ignoring(NoSuchElementException.class);
