@@ -2,4 +2,4 @@
 
 # Android Basic (ANDROID)
 * "2" saniye bekle
-* ID ile elementi bul ve tıkla "com.gratis.android:id/nav_graph_categories"
+* XPath ile elementi bul ve tıkla "//*[contains(@text, '81 ilde mağazadan ÜCRETSİZ TESLİMAT fırsatları')]"

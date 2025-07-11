@@ -24,16 +24,9 @@ public class StepImplementation extends HookImp {
         }
     }
 
-    @Step(" XPath ile elementi bul ve tıkla <xpath>")
-    public void clickElementByXpathIOS(String xpath) {
+    @Step("XPath ile elementi bul ve tıkla <xpath>")
+    public void clickElementByXpath(String xpath) {
         WebElement element = driver.findElement(AppiumBy.xpath(xpath));
         element.click();
     }
-    @Step("ID ile elementi bul ve tıkla <id>")
-    public void clickElementByIdIOS(String id) {
-        WebElement element = driver.findElement(AppiumBy.id(id));
-        element.click();
-    }
-
-
 }
