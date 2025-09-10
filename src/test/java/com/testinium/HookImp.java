@@ -1,11 +1,13 @@
 package com.testinium;
 
+
 import com.testinium.driver.TestiniumAndroidDriver;
 import com.testinium.driver.TestiniumIOSDriver;
 import com.testinium.util.Constants;
 import com.testinium.util.TestiniumEnvironment;
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.BeforeScenario;
+
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -14,14 +16,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import static com.testinium.util.Constants.CapabilityConstants.*;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_APP_ACTIVITY;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_APP_PACKAGE;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_AUTOMATION_NAME;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_AUTO_ACCEPT_ALERTS;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_AUTO_GRANT_PERMISSIONS;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_BUNDLE_ID;
+import static com.testinium.util.Constants.CapabilityConstants.APPIUM_NEW_COMMAND_TIMEOUT;
+import static com.testinium.util.Constants.CapabilityConstants.UDID;
 import static com.testinium.util.Constants.PLATFORM_NAME;
+
 
 public class HookImp {
 
@@ -35,7 +46,7 @@ public class HookImp {
     @BeforeScenario
     public void beforeScenario() {
         try {
-            System.out.println("isAndroid:" +TestiniumEnvironment.isPlatformAndroid());
+            System.out.println("isAndroid:" + TestiniumEnvironment.isPlatformAndroid());
                     if(DeviceAndroid || TestiniumEnvironment.isPlatformAndroid()){
                         DesiredCapabilities overridden = new DesiredCapabilities();
                         overridden.setCapability(PLATFORM_NAME, Platform.ANDROID);
