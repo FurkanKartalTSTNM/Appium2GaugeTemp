@@ -11,7 +11,7 @@ import static com.testinium.util.Constants.SESSION;
 public class CommandUtil {
 
     public static Boolean isAcceptable(String pathInfo, List<String> commands) {
-        System.out.println("Commands:" + commands);
+        System.out.println("Commands:" + pathInfo);
         List<String> path = new ArrayList<>(Arrays.asList(pathInfo.split("/")));
         if (path.size() >= 3 && path.get(1).equals(SESSION) && path.size() > 3) {
             path = path.subList(3, path.size());
