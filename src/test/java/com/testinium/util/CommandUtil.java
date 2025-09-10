@@ -13,6 +13,9 @@ public class CommandUtil {
     public static Boolean isAcceptable(String pathInfo, List<String> commands) {
         List<String> path = new ArrayList<>(Arrays.asList(pathInfo.split("/")));
 
+        if (path.size() == 2 && path.get(1).equals(SESSION)) {
+            return true; // (POST) /session → newSession kabul et
+        }
         // Örn: /session/1234  → sadece session delete
         if (path.size() == 3 && path.get(1).equals(SESSION)) {
             return true; // session komutlarını da kabul et
