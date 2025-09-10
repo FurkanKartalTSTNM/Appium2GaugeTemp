@@ -18,7 +18,7 @@ public class Constants {
 
     public static final List<String> ignoredCommands = Arrays.asList("screenshot", "start_recording_screen", "stop_recording_screen",
             "cookie", "window_handle", "window_handles", "window/current/maximize", "url", "title",
-            "timeouts/implicit_wait", "timeouts",
+            "timeouts/implicit_wait",
             "clear", "displayed", "enabled", "location", "appium/device/pull_file");
 
     public interface Command {

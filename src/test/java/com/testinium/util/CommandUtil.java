@@ -13,24 +13,11 @@ public class CommandUtil {
     public static Boolean isAcceptable(String pathInfo, List<String> commands) {
         System.out.println("Commands:" + pathInfo);
         List<String> path = new ArrayList<>(Arrays.asList(pathInfo.split("/")));
-
-        // (POST) /session → newSession
-        if (path.size() == 2 && path.get(1).equals(SESSION)) {
-            return true;
-        }
-
-        // (DELETE) /session/{id} → deleteSession
-        if (path.size() == 3 && path.get(1).equals(SESSION)) {
-            return true;
-        }
-
-        // Normal komutlar (/session/{id}/...)
-        if (path.size() >= 4 && path.get(1).equals(SESSION)) {
+        if (path.size() >= 3 && path.get(1).equals(SESSION) && path.size() > 3) {
             path = path.subList(3, path.size());
             String commandPath = StringUtils.join(path, "/");
             return !(commands.contains(commandPath) || commands.contains(path.get(path.size() - 1)));
         }
-
         return false;
     }
 
