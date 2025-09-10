@@ -26,6 +26,7 @@ public class TestiniumCommandExecutor extends AppiumCommandExecutor {
         Date startDate = new Date();
         Response response = super.execute(command);
         HttpRequest encodedCommand = super.getCommandCodec().encode(command);
+        System.out.println("encodedCommand: " + encodedCommand);
         buildCommandResultLogs(command, startDate, response, encodedCommand);
         return response;
     }
