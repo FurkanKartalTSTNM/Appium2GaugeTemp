@@ -12,6 +12,12 @@ public class CommandUtil {
 
     public static Boolean isAcceptable(String pathInfo, List<String> commands) {
         List<String> path = new ArrayList<>(Arrays.asList(pathInfo.split("/")));
+
+        // Örn: /session/1234  → sadece session delete
+        if (path.size() == 3 && path.get(1).equals(SESSION)) {
+            return true; // session komutlarını da kabul et
+        }
+
         if (path.size() >= 3 && path.get(1).equals(SESSION) && path.size() > 3) {
             path = path.subList(3, path.size());
             String commandPath = StringUtils.join(path, "/");
