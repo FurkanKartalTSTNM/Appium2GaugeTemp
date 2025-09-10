@@ -121,11 +121,14 @@ public class CommandResultLog implements Serializable {
         try {
             if (TestiniumEnvironment.isAllowedToTakeScreenshot()){
                 String screenshotName = MediaUtil.takeScreenShot(command);
+                Thread.sleep(1000L);
                 commandResultLog.setScreenshotName(screenshotName);
             }
 
         } catch (IOException e) {
             throw new ScreenshotException(command.getName());
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
         return commandResultLog;
     }
