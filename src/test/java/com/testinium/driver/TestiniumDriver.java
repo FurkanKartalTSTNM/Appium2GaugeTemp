@@ -57,6 +57,7 @@ public class TestiniumDriver {
         if (!TestiniumEnvironment.isProfileTestinium() ||
                 Boolean.FALSE.equals(CommandUtil.isAcceptable(encodedCommand.getUri(), ignoredCommands))
         ) {
+            System.out.println("Return");
             return;
         }
         CommandResultLog commandResultLog = build(command, startDate, response, encodedCommand);

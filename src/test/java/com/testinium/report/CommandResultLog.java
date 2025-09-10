@@ -106,6 +106,7 @@ public class CommandResultLog implements Serializable {
     }
 
     public static CommandResultLog build(Command command, Date startDate, Response response, HttpRequest encodedCommand) {
+        System.out.println("Build");
         System.out.println("CommandResultLog with encodedCommand" + encodedCommand);
         CommandResultLog commandResultLog = new CommandResultLog();
         Date endDate = new Date();
